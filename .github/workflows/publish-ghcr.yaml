@@ -22,7 +22,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ghcr.io/brunovbsilva/teste-api
+          images: ghcr.io/${{ github.actor }}/$(echo "${{ github.repository }}" | cut -d'/' -f2 | tr '[:upper:]' '[:lower:]')
           tags: |
             type=ref,event=branch
             type=sha
